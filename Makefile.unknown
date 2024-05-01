@@ -1,0 +1,13 @@
+CC=clang
+
+mastermind: codigo_a.o codigo_b.o
+	 $(CC) codigo_a.o codigo_b.o -o $@
+
+codigo_a.o: codigo_a.h codigo_a.c
+	 $(CC) -c codigo_a.c
+
+codigo_b.o: codigo_a.h codigo_b.c
+	 $(CC) -c codigo_b.c
+
+clean:
+	 rm mastermind *.o
